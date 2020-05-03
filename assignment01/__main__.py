@@ -31,21 +31,16 @@ def plot():
     2.3 Plot normal distributions
     :return:
     """
-    for sample_size in [500, 1000, 5000, 10000]:
-        x1 = sample_normal_distributed_values(samples_to_average=sample_size, samples_to_generate=4, offset=0.0)
-        x2 = sample_normal_distributed_values(samples_to_average=sample_size, samples_to_generate=4, offset=0.25)
-        x3 = sample_normal_distributed_values(samples_to_average=sample_size, samples_to_generate=4, offset=0.5)
-        x4 = sample_normal_distributed_values(samples_to_average=sample_size, samples_to_generate=4, offset=0.75)
+    d1 = sample_normal_distributed_values(samples_to_average=12, samples_to_generate=500, offset=0.0)
+    d2 = sample_normal_distributed_values(samples_to_average=12, samples_to_generate=1000, offset=0.25)
+    d3 = sample_normal_distributed_values(samples_to_average=12, samples_to_generate=5000, offset=0.5)
+    d4 = sample_normal_distributed_values(samples_to_average=12, samples_to_generate=10000, offset=0.75)
 
-        group_labels = ['offset 0.0', 'offset 0.25', 'offset 0.5', 'offset 0.75']
-        colors = ['slategray', 'magenta', 'red', 'green']
-        fig = ff.create_distplot([x1, x2, x3, x4], group_labels, bin_size=.5,
-                                 curve_type='normal',
-                                 colors=colors)
+    group_labels = ['500 samples', '1000 samples', '5000 samples', '10000 samples']
 
-        # Add title
-        fig.update_layout(title_text='sample_size ' + str(sample_size))
-        fig.show()
+    fig = ff.create_distplot([d1, d2, d3, d4], group_labels)
+    fig.update_layout(title_text='2.3 Plot normal distributions')
+    fig.show()
 
 
 def main():
