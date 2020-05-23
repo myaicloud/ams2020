@@ -17,7 +17,7 @@ def main():
     #matplotlib.pyplot.imshow(dists)
 
     # 2. e) compute distances
-    
+
     # 2. f) estimate the residuals
 
     # 2. g) evaluate every position in the map according to its associated probabilities
