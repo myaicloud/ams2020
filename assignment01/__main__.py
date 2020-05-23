@@ -53,7 +53,7 @@ def plot():
     print(dur_d1, str(dur_d1 / dur_d1 * 100) + "%")
     print(dur_d2, str(dur_d2 / dur_d1 * 100) + "%")
     print(dur_d3, str(dur_d3 / dur_d1 * 100) + "%")
-    print(dur_d4, str(dur_d4 / dur_d1 * 100) + "%")
+    print(dur_d4, str(dur_d4 / dur_d1 * 100) + "%"corona)
 
     group_labels = ['500 samples', '1000 samples', '5000 samples', '10000 samples']
 
