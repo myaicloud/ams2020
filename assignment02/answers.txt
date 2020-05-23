@@ -1,19 +1,95 @@
 1.1
+The GPS-Frequencies relie on 
+
+    • L1 (1575,42 MHz, wavelength 29,05cm) which is the oldest GPS signal. It has two parts: the Coarse/Acquisition Code (open to public) and the Precision Code (military use). L1 is the most established and even the cheapest GPS units can receive it. The frequency is relatively slow and not effective at traveling through obstacles
+
+
+    • L2 (1227,60 MHz, wavelength 25,48cm) frequencies which was implemented after the L1. It has also a military code and a civilian use code, is faster than L1 and allows the signal to better travel through abstacles. L2`s infrastructure isn`t complete yet. Thats why it cannot be used on its own and must be used along with L1 frequencies.
+
+
+    • L5 frequency (1,176.45 MHz, wavelength 25.48 cm). It is the most advanced GNSS signal yet but still in it`s infancy.
+    
 
 1.2
 a)
+t (time) = c (speed of light) /r (distance)
+300.000km/s  /  20.200km = ~14,851490099s
+
+
 b)
+300.000,1km/s / 20.200km = ~ 14,8514851485s
+
 
 1.3
 a)
+GNSS (Global Navigation Satellite System) is an umbrella term that encompasses all global satellite positioning systems. This includes constellations of satellites orbiting over the earth’s surface and continuously transmitting signals that enable users to determine their position.
+
+
 b)
-c)
+The rover sees 14 satellites.
+
+
+c) # HABE ICH KEINE ANTWORT ZU GEFUNDEN!
+
+
 d)
+The given XDOP values are sufficient. The 3D information (x,y,z) of the PDOP can define rays and their intersection points.
+
+
 e)
+The EPSG-Codes clearly state the spacial link of geodata. It´s key numbers contain the full  description of an coordinate system.
+
+
 f)
+The EPSG-Code which is commonly used for GPS-systems is 4326.
+
+
 g)
+172814.0 is the UTC of position fix,
+
+3723.46587704 is the latitude,
+
+N is the direction of latitude, North in this case,
+
+12202.26957864 is the longitude,
+
+W is the direction of longitude: West in this case,
+
+2 is the GPS Quality indicator, in this case Differential GPS fix, OmniSTAR VBS,
+
+6 is the number of Svs in use,
+
+1.2 is the HDOP (horizontal dilution of precision)
+
 
 1.4
 a)
+The count of possible analytical solutions for the rover is 2, while the count of possible physical solutions is 1.
+
+
 b)
-c)
+The rover-position can be calculated with y = -7,335x + 307,822 
+
+and the 2 solutions for x are x1= 40,128 and x2= 31,458. 
+
+As final solution we get the positions
+
+	x1 → P1(40,128 / 13,483)
+
+	x2 → P2(31,458 / 77,077)
+  
+  
+c) 
+#FUNKTIONIERT NOCH NICHT! VERSUCHE ES MORGEN WEITER
+
+import numpy as np
+from scipy import optimize
+
+def fun(x,y):
+    return [(x-15.833)** 2 + (y- 42.556)**2] – 37.89
+
+def fun1(x,y):
+     return [ (64.04 – x)**2 + (49.13 -y)	- 42.93
+
+x = np.linspace()
+sol = optimize.root(fun, [ , , ])
