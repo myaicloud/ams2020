@@ -1,0 +1,6 @@
+a) The more values, the greater the approximation to the bell-curve, because the more values are smoothed, the more the approximation to the bell-curve.
+b) In an example run:
+- 500 samples: runtime 0.010387659072875977s
+- 1000 samples: runtime ~0.03047s (~293%, ~3 times slower)
+- 5000 samples: runtime ~0.13537s (~1303%, ~13 times slower)
+- 10000 samples: runtime ~0.35134s (~3382%, ~34 times slower)
